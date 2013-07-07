@@ -9,6 +9,11 @@
 </p>
 
 <p>
+  <b>Ingredients:</b>
+<%= @recipe.ingredients.map(&:name).to_sentence %>
+</p>
+
+<p>
   <b>Description:</b>
   <%= @recipe.description %>
 </p>

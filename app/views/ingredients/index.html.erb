@@ -4,7 +4,7 @@
   <tr><th>Name</th></tr>
   <% @ingredients.each do |ingredient| %>
   <tr>
-    <td><%= ingredient.name %></td>
+    <td><%= link_to ingredient.name, ingredient %></td>
     <td><%= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
   <% end %>

@@ -1,6 +1,6 @@
 class Recipe < ActiveRecord::Base
   belongs_to :category
-  has_many :ingredients
+  has_and_belongs_to_many :ingredients
 
   attr_accessible :description, :published_date, :title, :category_id
 end

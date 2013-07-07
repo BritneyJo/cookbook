@@ -10,11 +10,12 @@
     <%= f.text_field :title %>
   </div>
 
-  <div class="field">
-    <%= f.label :ingredient_id, 'Ingredients' %><br />
-    <%= f.select(:ingredient_id, Ingredient.all.map {|c| [c.name, c.id]} ) %>
-  </div>
-
+  <% for ingredient in Ingredient.find(:all) %>
+<div>
+  <%= check_box_tag "ingredient[ingredient_ids][]", ingredient.id, @ingredient.ingredients.include?(ingredient) %>
+  <%= ingredient.name %>
+</div>
+<% end %>
 
   <div class="field">
     <%= f.label :description %><br />

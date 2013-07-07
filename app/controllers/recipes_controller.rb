@@ -31,6 +31,7 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
+      params[:recipe][:ingredient_ids] ||= []
     redirect_to @recipe
   end
 

@@ -4,6 +4,13 @@
   <%= @category.name %>
 </p>
 
+<p>
+  <b>Recipes:</b><br>
+<% @category.recipes.each do |recipe| %>
+<%= link_to recipe.title, recipe %><br>
+<% end %>
+</p>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Delete', @category, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'View All', categories_path %>
