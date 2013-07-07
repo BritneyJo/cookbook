@@ -8,21 +8,26 @@
 </head>
 <body>
 
-<p>
-  <% if controller_name == 'recipes' %>
-    <%= link_to 'Create new recipe', new_recipe_path %>
+<h1> Bj's Cookbook</h1>
+
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" >HOME</a>
+    <ul class="nav">
+      <li><%= link_to 'Home', root_path %></li>
+      <li>  <%= link_to 'Recipes', recipes_path %></li>
+      <li><%= link_to 'By Category', categories_path %></li>
+      <li><%= link_to 'By Ingredient', ingredients_path %></li>
+       <li> <% if controller_name == 'recipes' %>
+    <%= link_to 'Add Recipe', new_recipe_path %>
   <% else %>
-    <%= link_to 'Create new category', new_category_path %>
-  <% end %>
+    <%= link_to 'Add Category', new_category_path %>
+  <% end %></li>
+  <li><%= link_to 'Search', search_path %></li>
+    </ul>
+  </div>
+</div>
 
-  <%= link_to 'All recipes', recipes_path %>
-  <%= link_to 'All categories', categories_path %>
-  <%= link_to 'FAQ', faq_path %>
-  <%= link_to 'About Us', about_us_path %>
-  <%= link_to 'home_page', root_path %>
-
-
-</p>
 
 <%= yield %>
 

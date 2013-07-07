@@ -1,0 +1,15 @@
+<h2>Listing Ingredients</h2>
+
+<table>
+  <tr><th>Name</th></tr>
+  <% @ingredients.each do |ingredient| %>
+  <tr>
+    <td><%= ingredient.name %></td>
+    <td><%= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ingredient', new_ingredient_path %>

@@ -1,10 +1,9 @@
 Cookbook::Application.routes.draw do
    resources :categories
    resources :recipes
+   resources :ingredients
 
-   get '/about_us/', to: 'home#about_us'
-
-   get '/faq', to: 'home#faq'
+   get '/search', to: 'home#search'
 
    root to: 'home#home'
 
