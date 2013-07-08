@@ -13,7 +13,7 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    @ingredient = Ingredient.new(params[:car])
+    @ingredient = Ingredient.new(params[:ingredient])
     @ingredient.save
     redirect_to @ingredient
   end
@@ -21,6 +21,12 @@ class IngredientsController < ApplicationController
   def edit
     @ingredient = Ingredient.find(params[:id])
   end
+
+  def update
+  @ingredient = Ingredient.find(params[:id])
+  @ingredient.update_attributes(params[:ingredient])
+  redirect_to @ingredient
+end
 
   def destroy
     @ingredient = Ingredient.find(params[:id])

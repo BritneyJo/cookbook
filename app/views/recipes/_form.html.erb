@@ -1,28 +1,29 @@
 <%= form_for(@recipe) do |f| %>
 
 <div class="field">
-    <%= f.label :category_id, 'Category' %><br />
+    <%= f.label :category_id, 'Category:' %>
     <%= f.select(:category_id, Category.all.map {|c| [c.name, c.id]} ) %>
   </div>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title, 'Title:'%>
     <%= f.text_field :title %>
   </div>
 
+Ingredients:
   <% for ingredient in Ingredient.find(:all) %>
 <div>
-  <%= check_box_tag "ingredient[ingredient_ids][]", ingredient.id, @ingredient.ingredients.include?(ingredient) %>
+  <%= check_box_tag "ingredient[ingredient_ids]", ingredient.id, @recipe.ingredients.include?(ingredient) %>
   <%= ingredient.name %>
 </div>
 <% end %>
 
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= f.label :description, 'Description:' %>
+    <%= f.text_area :description, size: "25x10" %>
   </div>
   <div class="field">
-    <%= f.label :published_date %><br />
+    <%= f.label :published_date, 'Published Date:' %>
     <%= f.date_select :published_date %>
   </div>
   <div class="actions">

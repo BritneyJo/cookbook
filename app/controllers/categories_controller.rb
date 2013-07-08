@@ -17,16 +17,17 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
   end
 
+  def update
+    @category = Category.find(params[:id])
+    @category.update_attributes(params[:category])
+    redirect_to @category
+  end
 
   def create
     @category = Category.new(params[:category])
     redirect_to @category
   end
 
-  def update
-    @category = Category.find(params[:id])
-    redirect_to @category
-  end
 
   def destroy
     @category = Category.find(params[:id])
