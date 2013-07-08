@@ -2,5 +2,8 @@ class Recipe < ActiveRecord::Base
   belongs_to :category
   has_and_belongs_to_many :ingredients
 
-  attr_accessible :description, :published_date, :title, :category_id
+  attr_accessible :description, :published_date, :title, :category_id, :ingredient_ids
+
+  validates :title, presence: true, uniqueness: true
+
 end

@@ -12,17 +12,18 @@
 
 <div class="navbar">
   <div class="navbar-inner">
-    <a class="brand" >HOME</a>
+
     <ul class="nav">
       <li><%= link_to 'Home', root_path %></li>
       <li>  <%= link_to 'Recipes', recipes_path %></li>
       <li><%= link_to 'By Category', categories_path %></li>
       <li><%= link_to 'By Ingredient', ingredients_path %></li>
-       <li> <% if controller_name == 'recipes' %>
+ <!--       <li> <% if controller_name == 'recipes' %>
     <%= link_to 'Add Recipe', new_recipe_path %>
   <% else %>
     <%= link_to 'Add Category', new_category_path %>
-  <% end %></li>
+  <% end %></li> -->
+
   <li><%= link_to 'Search', search_path %></li>
     </ul>
   </div>
