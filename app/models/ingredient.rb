@@ -1,7 +1,8 @@
 class Ingredient < ActiveRecord::Base
-  has_and_belongs_to_many :recipes
+   attr_accessible :name
+   has_many :recipes, through: :ingredients_recipe
 
-  attr_accessible :name
+
 
   validates :name, presence: true, uniqueness: true
 
