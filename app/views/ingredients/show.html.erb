@@ -8,7 +8,9 @@
 </p>
 
 
+<% if current_user.role == "admin" %>
 <%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
 <%= link_to 'Delete', @ingredient, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'All Ingredients', ingredients_path %> |
-<%= link_to 'Add Recipe', new_recipe_path %>
+<% end %>
+<%= link_to 'All Ingredients', ingredients_path %>
+

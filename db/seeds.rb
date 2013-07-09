@@ -8,18 +8,19 @@
 
 Category.destroy_all
 
-main = Category.create(name: 'Main')
+c1 = Category.create(name: 'Appetizer')
+c2 = Category.create(name: 'Breakfast')
+c3 = Category.create(name: 'Main')
+c4 = Category.create(name: 'Dessert')
 
 Ingredient.destroy_all
 
-pasta = Ingredient.create(name: 'Pasta', image_url: 'http://placekitten.com/200/200')
-cheese = Ingredient.create(name: 'Cheese', image_url: 'http://placekitten.com/g/200/200')
-
-# ingredients = Ingredient.create([
-#   { name: 'Cool!', image_url: 'http://placekitten.com/200/200'},
-#   { name: 'Pasta', image_url: 'http' }
-# ])
+i1 = Ingredient.create(name: 'Bowtie Pasta', image_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK78gBzOLyM-VK7-jMup7QJodd4E28qC7o7Nq2Oh7db2I1t-l7')
+i2 = Ingredient.create(name: 'Parmesan Cheese', image_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzozdsAnWZ7GxTzWuPoco80rnN3ocW7T02Lu4DeQu9oI7RImEORA')
+i3 = Ingredient.create(name: 'Salt', image_url: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRcbQ6iN1WwaK6vcGhgk4wIXQMJfjI3_SD-P3EfIHiGWr1QaTZDig')
+i4 = Ingredient.create(name: 'Pepper', image_url: 'http://www.bigoven.com/uploads/groundpepper.jpg')
 
 Recipe.destroy_all
 
-pasta_bake = Recipe.create(title: 'Pasta Bake', description: 'Lalalala', category_id: main.id, ingredient_ids: [pasta.id, cheese.id])
+r1 = Recipe.create(title: 'Spring Pasta', description: 'instructions go here!', category_id: c3.id, ingredient_ids: [i1.id, i2.id, i3.id, i4.id])
+r2 = Recipe.create(title: 'Blueberry Pancakes', description: 'instructions go here!', category_id: c2.id, ingredient_ids: [i3.id])

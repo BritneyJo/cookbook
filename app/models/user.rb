@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation
 
+  def role? role
+    self.role == role
+  end
+
 end

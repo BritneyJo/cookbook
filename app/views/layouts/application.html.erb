@@ -8,15 +8,7 @@
 </head>
 <body>
 
-<p>
-  <% if current_user %>
-    Hello, <%= current_user.email %>!
-  <br>
-  <%= link_to 'Logout', session_path(session), method: :delete, data: {confirm: 'Are you sure?'}%>
-<% else %>
-  <%= link_to 'Member Login', login_path %>
-<% end %>
-</p>
+
 
 <% flash.each do |name, message| %>
  <div class="flash-message flash-message-<%= name %>">
@@ -33,6 +25,12 @@
       <li>  <%= link_to 'Recipes', recipes_path %></li>
       <li><%= link_to 'Categories', categories_path %></li>
       <li><%= link_to 'Ingredients', ingredients_path %></li>
+      <li><% if current_user %>
+                  <%= link_to 'Sign out', logout_path %>
+              <% else %>
+                  <%= link_to 'Sign In', login_path %>
+              <% end %>
+      </li>
     </ul>
   </div>
 </div>
