@@ -2,11 +2,9 @@
 
 <table>
   <tr>
-    <th>Title</th>
+    <th>Name</th>
     <th>Category</th>
     <th>Description</th>
-    <th>Published date</th>
-
   </tr>
 
 <% @recipes.each do |recipe| %>
@@ -14,7 +12,6 @@
     <td><%= link_to recipe.title, recipe %></td>
     <td><%= link_to(recipe.category.name, recipe.category) if recipe.category %></td>
     <td><%= recipe.description %></td>
-    <td><%= recipe.published_date %></td>
   </tr>
 <% end %>
 </table>
