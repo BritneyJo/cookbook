@@ -19,7 +19,7 @@
 </p>
 
 
-<% if current_user.role == "admin" %>
+<% if current_user && current_user.role == "admin" %>
 <%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %> |
 <%= link_to 'Delete Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <% end %>

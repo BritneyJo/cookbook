@@ -11,7 +11,7 @@
 <% end %>
 </p>
 
-<% if current_user.role == "admin" %>
+<% if current_user && current_user.role == "admin" %>
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Delete', @category, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <% end %>
