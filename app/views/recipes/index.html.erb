@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th></th>
     <th>Name</th>
     <th>Category</th>
     <th>Description</th>
@@ -9,6 +10,7 @@
 
 <% @recipes.each do |recipe| %>
   <tr>
+    <td><%= image_tag recipe.recipe_image.thumb.url %></td>
     <td><%= link_to recipe.title, recipe %></td>
     <td><%= link_to(recipe.category.name, recipe.category) if recipe.category %></td>
     <td><%= recipe.description %></td>

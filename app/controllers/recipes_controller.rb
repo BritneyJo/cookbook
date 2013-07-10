@@ -4,7 +4,7 @@ load_and_authorize_resource
   def index
     @recipes = case
     when params[:category_id].nil?
-      Recipe.all
+      Recipe.order('title ASC')
     else
       Recipe.where(category_id: params[:category_id])
     end
@@ -25,6 +25,7 @@ load_and_authorize_resource
 
   def create
     @recipe = Recipe.new(params[:recipe])
+    @recipe.save
     redirect_to @recipe
   end
 

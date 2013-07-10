@@ -1,11 +1,13 @@
 <p>
-  <b>Category:</b>
-  <%= @recipe.category.name if @recipe.category %>
+  <b>Name:</b>
+  <%= @recipe.title %>
 </p>
 
+ <p><%= image_tag @recipe.recipe_image.detail.url %></p>
+
 <p>
-  <b>Title:</b>
-  <%= @recipe.title %>
+  <b>Category:</b>
+  <%= @recipe.category.name if @recipe.category %>
 </p>
 
 <p>

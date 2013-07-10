@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
 load_and_authorize_resource
 
   def index
-    @categories = Category.all
+    @categories = Category.order('name ASC')
   end
 
 
@@ -26,6 +26,7 @@ load_and_authorize_resource
 
   def create
     @category = Category.new(params[:category])
+    @category.save
     redirect_to @category
   end
 
