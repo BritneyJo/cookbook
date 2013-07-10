@@ -13,7 +13,7 @@
     <td><%= image_tag recipe.recipe_image.thumb.url %></td>
     <td><%= link_to recipe.title, recipe %></td>
     <td><%= link_to(recipe.category.name, recipe.category) if recipe.category %></td>
-    <td><%= recipe.description %></td>
+    <td><%= recipe.description[0..50] %></td>
   </tr>
 <% end %>
 </table>

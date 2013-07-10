@@ -8,6 +8,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'ransack'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

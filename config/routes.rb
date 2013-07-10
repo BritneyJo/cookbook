@@ -9,8 +9,9 @@ Cookbook::Application.routes.draw do
   resources :recipes
   resources :ingredients
 
-   get '/search', to: 'home#search'
+  # get '/search', to: 'search#index'
+  match 'search', to: 'search#index', via: [:get, :post], as: :search
 
-   root to: 'home#home'
+  root to: 'home#home'
 
 end
