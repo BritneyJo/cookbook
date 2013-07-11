@@ -1,0 +1,25 @@
+
+
+<%= search_form_for @q, url: search_path, html: {method: :post} do |f| %>
+
+<p>
+  <%= f.label :title_cont, 'Search for a Recipe!' %>
+  <%= f.text_field :title_or_ingredients_name_cont %>
+</p>
+ <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<% if flash %>
+  <p><%= flash[:error] %></p>
+<% end %>
+
+
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <li>
+        <%= link_to recipe.title, recipe %>
+      </li>
+    <% end %>
+</ul>

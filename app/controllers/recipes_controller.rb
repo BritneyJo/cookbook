@@ -31,7 +31,6 @@ load_and_authorize_resource
 
   def update
     @recipe = Recipe.find(params[:id])
-    params[:recipe][:ingredient_ids] ||= []
     @recipe.update_attributes(params[:recipe])
     redirect_to @recipe
   end

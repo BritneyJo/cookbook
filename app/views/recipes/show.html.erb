@@ -12,7 +12,7 @@
 
 <p>
   <b>Ingredients:</b>
-<%= @recipe.ingredients.map(&:name).to_sentence %>
+<%= @recipe.ingredients_recipes.map(&:ingredient_name_and_quantity).to_sentence %>
 </p>
 
 <p>

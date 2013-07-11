@@ -6,31 +6,34 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body >
+  <div class="inner-body">
 
 
-<h1> The Best Cookbook</h1>
+    <div class="container">
+          <h1> The Best Cookbook</h1>
 
-<div class="navbar">
-  <div class="navbar-inner">
-    <ul class="nav">
-      <li><%= link_to 'Home', root_path %></li>
-      <li>  <%= link_to 'Recipes', recipes_path %></li>
-      <li><%= link_to 'Categories', categories_path %></li>
-      <li><%= link_to 'Ingredients', ingredients_path %></li>
-      <li><%= link_to 'Search', search_path %></li>
-      <li><% if current_user %>
-                  <%= link_to 'Sign out', logout_path %>
-              <% else %>
-                  <%= link_to 'Sign In', login_path %>
-              <% end %>
-      </li>
-    </ul>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <li><%= link_to 'Home', root_path %></li>
+          <li>  <%= link_to 'Recipes', recipes_path %></li>
+          <li><%= link_to 'Categories', categories_path %></li>
+          <li><%= link_to 'Ingredients', ingredients_path %></li>
+          <li><%= link_to 'Search', search_path %></li>
+          <li><% if current_user %>
+            <%= link_to 'Sign out', logout_path %>
+            <% else %>
+            <%= link_to 'Sign In', login_path %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <%= yield %>
   </div>
 </div>
-
-
-<%= yield %>
-
 </body>
 </html>
